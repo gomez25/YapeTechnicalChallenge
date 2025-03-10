@@ -20,9 +20,14 @@ namespace TransactionService.Application
                 Status = "PENDING"
             };
 
-            var finalTransaction = await _transactionRepository.GetTransactionWithTotalAmountAsync(transaction.SourceAccountId);
+            var response = await _transactionRepository.CreateTransactionAsync(newTransaction);
 
-            await _transactionRepository.CreateTransactionAsync(newTransaction);
+
+            var finalTransaction = await _transactionRepository.GetTransactionWithTotalAmountAsync(response.SourceAccountId);
+
+            finalTransaction.Id = response.Id;
+            finalTransaction.Amount = response.Amount;
+            finalTransaction.Status = response.Status;
 
             await _kafkaProducer.PublishTransactionAsync(finalTransaction);
 

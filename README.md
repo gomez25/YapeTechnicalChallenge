@@ -7,10 +7,15 @@ This project is a .NET 8 based microservices application that includes a Transac
 ## Services
 
 - **PostgreSQL**
+  - **Database**: `transaction_db`
+	- This database will store all transactions, regardless of their current status, along with their associated source and destination accounts.
 - **Zookeeper**
 - **Kafka**
+  - Kafka will be used for communication between both services through the topics transaction-topic and transaction-status. 
 - **Transaction Service**
+  - This service will send transactions for validation to the anti-fraud service via a Kafka topic. The transactions will be validated, and their status will be updated accordingly. Additionally, this service has a direct connection to the database.	
 - **Anti-Fraud Service**
+  - This service will receive transactions with a pending status and perform the necessary validation to determine whether the final status of the transaction will be rejected or approved.	
 
 ## Prerequisites
 

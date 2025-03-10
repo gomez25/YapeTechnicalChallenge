@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography;
 using TransactionService.Domain.DTOs;
 using TransactionService.Domain.Entities;
+using TransactionService.Domain.Exceptions;
 using TransactionService.Domain.Interfaces;
 using TransactionService.Infrastructure.Database;
 
@@ -38,18 +38,14 @@ namespace TransactionService.Infrastructure.Repositories
                 }
             ).FirstOrDefaultAsync();
 
-            if (transactionDto is null)
-                throw new Exception("Transaction not found");
-
-            return transactionDto;
+            return transactionDto ?? new TransactionDto();
         }
-
 
         public async Task<bool> UpdateStatusAsync(TransactionStatusDto transaction)
         {
             var result = await _dbContext.Transactions
                 .Where(t => t.Id == transaction.TransactionId)
-                .FirstOrDefaultAsync() ?? throw new Exception("Transaction not found");
+                .FirstOrDefaultAsync() ?? throw new TransactionNotFound();
 
             result.Status = transaction.Status;
 

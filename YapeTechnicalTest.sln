@@ -34,6 +34,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService.Infrastructure", "src\TransactionService\Infrastructure\TransactionService.Infrastructure\TransactionService.Infrastructure.csproj", "{555EB172-09E5-4E24-964C-65FED321F64B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9E5EF38A-B352-4066-BF69-2494C9DBE773}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransactionService", "TransactionService", "{E0530250-D17C-4F1E-96AA-2A0F7B23A2CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService.Api.Tests", "tests\TransactionService\TransactionService.Api.Tests\TransactionService.Api.Tests.csproj", "{0D4CB05D-C2A9-45EC-A9EF-5CA0585F9A60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService.Application.Tests", "tests\TransactionService\TransactionService.Application.Tests\TransactionService.Application.Tests.csproj", "{ECA7C585-E8B5-4CB3-A32C-6BB2B94C2329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService.Infrastructure.Tests", "tests\TransactionService\TransactionService.Infrastructure.Tests\TransactionService.Infrastructure.Tests.csproj", "{2F6445BF-356F-4369-9FC2-C34A9286F6F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AntiFraudService", "AntiFraudService", "{37FA4A21-5303-4706-8834-925931AE1451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntiFraudService.Infrastructure.Tests", "tests\AntiFraudService\AntiFraudService.Infrastructure.Tests\AntiFraudService.Infrastructure.Tests.csproj", "{70393675-FEFF-4B29-9199-274823BD0E67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +86,22 @@ Global
 		{555EB172-09E5-4E24-964C-65FED321F64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{555EB172-09E5-4E24-964C-65FED321F64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{555EB172-09E5-4E24-964C-65FED321F64B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4CB05D-C2A9-45EC-A9EF-5CA0585F9A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4CB05D-C2A9-45EC-A9EF-5CA0585F9A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4CB05D-C2A9-45EC-A9EF-5CA0585F9A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4CB05D-C2A9-45EC-A9EF-5CA0585F9A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA7C585-E8B5-4CB3-A32C-6BB2B94C2329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA7C585-E8B5-4CB3-A32C-6BB2B94C2329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA7C585-E8B5-4CB3-A32C-6BB2B94C2329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA7C585-E8B5-4CB3-A32C-6BB2B94C2329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F6445BF-356F-4369-9FC2-C34A9286F6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6445BF-356F-4369-9FC2-C34A9286F6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6445BF-356F-4369-9FC2-C34A9286F6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6445BF-356F-4369-9FC2-C34A9286F6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70393675-FEFF-4B29-9199-274823BD0E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70393675-FEFF-4B29-9199-274823BD0E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70393675-FEFF-4B29-9199-274823BD0E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70393675-FEFF-4B29-9199-274823BD0E67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,5 +117,11 @@ Global
 		{B462C3E5-FD36-458F-9500-ABA0640BD645} = {2C7279E6-30ED-4616-89AF-E61DEF331832}
 		{B5AC1880-8CF1-45F9-93A1-A4C6645979E7} = {2C7279E6-30ED-4616-89AF-E61DEF331832}
 		{555EB172-09E5-4E24-964C-65FED321F64B} = {2C7279E6-30ED-4616-89AF-E61DEF331832}
+		{E0530250-D17C-4F1E-96AA-2A0F7B23A2CD} = {9E5EF38A-B352-4066-BF69-2494C9DBE773}
+		{0D4CB05D-C2A9-45EC-A9EF-5CA0585F9A60} = {E0530250-D17C-4F1E-96AA-2A0F7B23A2CD}
+		{ECA7C585-E8B5-4CB3-A32C-6BB2B94C2329} = {E0530250-D17C-4F1E-96AA-2A0F7B23A2CD}
+		{2F6445BF-356F-4369-9FC2-C34A9286F6F6} = {E0530250-D17C-4F1E-96AA-2A0F7B23A2CD}
+		{37FA4A21-5303-4706-8834-925931AE1451} = {9E5EF38A-B352-4066-BF69-2494C9DBE773}
+		{70393675-FEFF-4B29-9199-274823BD0E67} = {37FA4A21-5303-4706-8834-925931AE1451}
 	EndGlobalSection
 EndGlobal

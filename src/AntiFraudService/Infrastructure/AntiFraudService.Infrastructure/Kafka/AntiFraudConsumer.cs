@@ -1,6 +1,5 @@
 ﻿using AntiFraudService.Domain.DTOs;
 using Confluent.Kafka;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text.Json;
 
@@ -106,16 +105,9 @@ namespace AntiFraudService.Infrastructure.Kafka
             }
         }
 
-        private static bool CheckFraud(TransactionDto transaction)
+        public static bool CheckFraud(TransactionDto transaction)
         {
             return transaction.Amount > 2000 || transaction.TotalAmount > 20000;
-        }
-
-        public override async Task StopAsync(CancellationToken cancellationToken)
-        {
-            _consumer.Close();
-            _producer.Flush(cancellationToken);
-            await base.StopAsync(cancellationToken);
         }
     }
 }
